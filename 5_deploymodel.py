@@ -1,11 +1,18 @@
 from google.cloud import aiplatform
 
-#projects/1024410131179/locations/us-central1/models/7367199596587515904
+'''
+Creating Model
+Create Model backing LRO: projects/1024410131179/locations/us-central1/models/7522010833778376704/operations/7785503194737541120
+Model created. Resource name: projects/1024410131179/locations/us-central1/models/7522010833778376704@1
+To use this Model in another session:
+model = aiplatform.Model('projects/1024410131179/locations/us-central1/models/7522010833778376704@1')
+Modell erfolgreich hochgeladen: projects/1024410131179/locations/us-central1/models/7522010833778376704
+'''
 
 # GCP-Setup
 PROJECT_ID = "vertex2025"
 LOCATION = "us-central1"
-MODEL_ID = "7367199596587515904"  # Deine Modell-ID
+MODEL_ID = "5844419972582866944"  # Deine Modell-ID
 ENDPOINT_NAME = "random_forest_endpoint"
 
 # Vertex AI initialisieren

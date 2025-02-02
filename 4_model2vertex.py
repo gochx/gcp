@@ -12,7 +12,7 @@ aiplatform.init(project=PROJECT_ID, location="us-central1")
 model = aiplatform.Model.upload(
     display_name="random_forest_model",
     artifact_uri=f"gs://{BUCKET_NAME}/{GCS_MODEL_FOLDER}/",
-    serving_container_image_uri="us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-0:latest"
+    serving_container_image_uri="us-docker.pkg.dev/vertex-ai/prediction/sklearn-cpu.1-5:latest"
 )
 
 print("Modell erfolgreich hochgeladen:", model.resource_name)
