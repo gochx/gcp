@@ -1,4 +1,4 @@
-# Vorher ausführen:
+# Vorher ausführen um die JSON Datei in den Bucket zu laden:
 # gsutil cp test_instances.jsonl gs://gochx_bucket/test_instances.jsonl
 
 

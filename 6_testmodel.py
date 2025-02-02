@@ -8,7 +8,7 @@ from google.auth.transport.requests import Request
 
 # 🔹 GCP-Projekt & Endpoint-ID (ohne Komma!)
 PROJECT_ID = "1024410131179"
-ENDPOINT_ID = "7557384321867186176"
+ENDPOINT_ID = "621840895716622336"
 
 # 🔹 Endpunkt-URL
 ENDPOINT_URL = f"https://us-central1-aiplatform.googleapis.com/v1/projects/{PROJECT_ID}/locations/us-central1/endpoints/{ENDPOINT_ID}:predict"
@@ -16,7 +16,7 @@ ENDPOINT_URL = f"https://us-central1-aiplatform.googleapis.com/v1/projects/{PROJ
 # 🔹 Testdaten (müssen die gleichen Features wie das Modell haben!)
 test_instance = {
     "instances": [
-        {"feature1": 2.5, "feature2": 3.1}
+        [2.5, 3.1]
     ]
 }
 
