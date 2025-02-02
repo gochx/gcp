@@ -1,3 +1,5 @@
+# Optional, auszuführen nach Train Model, um zu testen, ob das Modell korrekt funktioniert.
+
 import joblib
 import json
 import numpy as np

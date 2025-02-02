@@ -1,3 +1,5 @@
+# Optional: Auszuführen nach 4_model2vertex.py, um das Modell als Batch Prediction zu testen.
+#
 # Vorher ausführen um die JSON Datei in den Bucket zu laden:
 # gsutil cp test_instances.jsonl gs://gochx_bucket/test_instances.jsonl
 
