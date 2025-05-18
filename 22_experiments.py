@@ -11,7 +11,7 @@ import tempfile
 
 PROJECT_ID = "vertex2025"
 REGION = "us-central1"
-EXPERIMENT_NAME = "rf-experiment-05"
+EXPERIMENT_NAME = "rf-experiment-06"
 RUN_NAME = "run1"
 
 # Init
@@ -35,6 +35,26 @@ accuracy = accuracy_score(y_test, y_pred)
 # Logs
 aiplatform.log_params({"n_estimators": 100, "random_state": 42})
 aiplatform.log_metrics({"accuracy": accuracy})
+
+
+# Modell speichern
+with tempfile.TemporaryDirectory() as tmpdir:
+    model_path = os.path.join(tmpdir, "model.joblib")
+    joblib.dump(model, model_path)
+
+    # Modell als Artifact erstellen
+    model_artifact = aiplatform.Artifact.create(
+        schema_title="system.Model",  # GCP kennt dieses Schema
+        uri=model_path,               # Lokaler Pfad oder Cloud Storage URI
+        display_name="Random Forest Model",
+        description="RandomForest trained on gochx_table",
+        metadata={
+            "framework": "sklearn",
+            "accuracy": accuracy
+        },
+        project=PROJECT_ID,
+        location=REGION,
+    )
 
 ''' MUSS NOCH AKTUALISIERT WERDEN
 Siehe: https://cloud.google.com/vertex-ai/docs/experiments/track-executions-artifacts?hl=de
