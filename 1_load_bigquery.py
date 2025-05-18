@@ -9,7 +9,6 @@ TABLE_ID = "gochx_table"
 # Erstelle einen BigQuery-Client
 client = bigquery.Client(project=PROJECT_ID)
 
-
 ## Dataset erstellen
 
 # Dataset-Referenz
